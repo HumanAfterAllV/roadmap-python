@@ -33,19 +33,26 @@ class Estudiantes:
             print(f"{item} - {value}")
 
         return self.promedios
-    
+        
     def mejores_estudiantes(self):
-
         if not self.promedios:
-            print("Primero selecciona la opción 1: Promedios ")
+            print("Primero selecciona la opción 1: Promedios")
             return
-        for nombre, promedio in self.promedios.items():
-            if promedio >= 9:
-                print(f"{nombre} - {promedio}")
-
+        
+        mejores = [f"{nombre} - {promedio}" for nombre, promedio in self.promedios.items() if promedio >= 9]
+        
+        if mejores:
+            print("Estudiantes con promedio mayor o igual a 9:")
+            for estudiante in mejores:
+                print(estudiante)
+        else:
+            print("No hay estudiantes con promedio igual o mayor a 9.")
     def ordenar_por_nacimiento(self):
-        print(sorted(self.estudiantes_lista.values(), key=lambda est: est["fecha_nacimiento"]))
-    
+        estudiantes_ordenados = sorted(self.estudiantes_lista.values(), key=lambda est: est["fecha_nacimiento"])
+        print("Estudiantes ordenados por fecha de nacimiento (de más joven a más viejo):")
+        for est in estudiantes_ordenados:
+            print(f"{est['nombre']} - {est['fecha_nacimiento']}")
+
     def mayor_calificaciones(self):
         calificaciones_totales = [cal for est in self.estudiantes_lista.values() for cal in est["calificaciones"]]
         mayor = max(calificaciones_totales)
