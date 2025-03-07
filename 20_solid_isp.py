@@ -18,21 +18,21 @@ class Fax(ABC):
 
 class ImpresoraBN(Impresora):
     def imprimir(self):
-        return "Imprimiendo Blanco y negro"
+        return "🖨️ Imprimiendo Blanco y negro"
     
 class ImpresoraColor(Impresora):
     def imprimir(self):
-        return "Imprimiendo a color"
+        return "🌈 Imprimiendo a color"
     
 class MultiFuncional(Impresora, Escaner, Fax):
     def imprimir(self):
-        return "Imprimiendo Blanco y negro"
+        return "🖨️ Imprimiendo Blanco y negro"
     
     def escanear(self):
-        return "Escaneando documento"
+        return "📄 Escaneando documento"
     
     def enviar_fax(self):
-        return "Mandando Fax"
+        return "📠 Mandando Fax"
 
 
 def probar_impresora(lista_impresoras):
