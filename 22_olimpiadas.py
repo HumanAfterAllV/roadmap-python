@@ -1,5 +1,4 @@
 import random
-import math
 
 class IDBuild:
     @staticmethod
@@ -84,7 +83,7 @@ class EventoDeportivo:
         while contador < num_participantes:
             print("Participantes")
             nombre_p = str(input("Nombre del participante: ")).lower().strip()
-            
+
             try:
                 pais_p = str(input("País del participante: ")).lower().strip()
             except(ValueError) as error:

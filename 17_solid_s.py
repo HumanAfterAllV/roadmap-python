@@ -1,6 +1,6 @@
 from enum import Enum
 import random
-import re
+import re   
 
 class EstadoLibro(Enum):
     DISPONIBLE = "Disponible"
@@ -224,7 +224,5 @@ def menu():
         
         except KeyboardInterrupt:
             error_manager(KeyboardInterrupt())
-
-
 
 menu()
